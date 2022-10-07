@@ -23,7 +23,7 @@ timezone: Asia/Seoul
 
 title: NH                          # the main title
 
-tagline: 빙글빙글 돌아가는 코딩   # it will display as the sub-title
+tagline: "빙글빙글 돌아가는 코딩"   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
