@@ -634,7 +634,9 @@ $sidebar-display: "sidebar-display";
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  background: var(--sidebar-bg);
+  background: url('바다.jpg');
+  background-size: 100% 100%;
+  background-position: center;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -689,6 +691,7 @@ $sidebar-display: "sidebar-display";
     }
   } /* #avatar */
 
+  /* 타이틀 글자색, 크기 바꾸기*/
   .site-title {
     a {
       @extend %clickable-transition;
@@ -696,13 +699,17 @@ $sidebar-display: "sidebar-display";
       font-weight: 900;
       font-size: 1.5rem;
       letter-spacing: 0.5px;
-      color: rgba(134, 133, 133, 99%);
+      color: rgba(232, 223, 202, 99%);
     }
   }
 
+  /* 서브 타이틀 글자색, 크기 바꾸기 */
   .site-subtitle {
     font-size: 95%;
-    color: var(--sidebar-muted-color);
+    /* (Origin) color: var(--sidebar-muted-color);*/
+    
+    /*변경*/
+    color:rgba(245, 239, 230, 99%);
     line-height: 1.2rem;
     word-spacing: 1px;
     margin: 0.5rem 1.5rem 0.5rem 1.5rem;
@@ -710,6 +717,7 @@ $sidebar-display: "sidebar-display";
     user-select: none;
   }
 
+  /* navigation bar */
   .nav-link {
     border-radius: 0;
     font-size: 0.95rem;
@@ -725,8 +733,10 @@ $sidebar-display: "sidebar-display";
     height: $tab-height;
 
     &.active {
+      
       .nav-link {
-        color: var(--sidebar-active-color);
+        /*(Origin) color: var(--sidebar-active-color); ( 클릭한 카테고리에 해당되는 색 )*/
+        color:rgba(46, 76, 109, 100%)
       }
     }
 
