@@ -1,6 +1,6 @@
 ---
 title: "[SpringBoot] 게시판 서비스 - 요구사항"
-date: '2022-10-16 +0900'
+date: '2022-10-18 +0900'
 description: '패스트캠퍼스 강의 - 고도화된 게시판 서비스'
 categories: [Study,Spring]
 tags: [Java,Spring,Intellij,Git,Project]
