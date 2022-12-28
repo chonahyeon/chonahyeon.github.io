@@ -4,6 +4,7 @@ date: '2022-12-28 +0900'
 description: 'Spring 강의 정리하기'
 categories: [Study,Spring]
 tags: [Java,Spring,Domain]
+pin: true
 ---
 
 > 12월 4주차 스터디 발표 자료                        
