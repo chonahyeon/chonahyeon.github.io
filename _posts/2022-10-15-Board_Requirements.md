@@ -4,7 +4,7 @@ date: '2022-10-18 +0900'
 description: '패스트캠퍼스 강의 - 고도화된 게시판 서비스'
 categories: [Study,Spring]
 tags: [Java,Spring,Intellij,Git,Project]
-pin: true
+pin: false
 ---
 
 > 프로젝트 개요에 이어서, 요구사항분석 및 설계입니다.          
