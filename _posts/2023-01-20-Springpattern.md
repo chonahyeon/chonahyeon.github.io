@@ -1,7 +1,7 @@
 ---
 title: "[SpringBoot] Builder 패턴"
 date: '2023-01-20 +0900'
-description: 'Spring Builder 패턴 정리하기'
+description: 'Spring Builder 패턴 정리'
 categories: [Study,Spring]
 tags: [Java,Spring]
 pin: true
