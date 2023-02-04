@@ -26,11 +26,10 @@ pin: true
     * **Heap 영역의 구조?**
     <br>                 
     ![HEAP 메모리 구조](/assets/img/HEAP.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " } 
-### **가비지 컬렉션의 동작 과정** ###
 
+### **가비지 컬렉션의 동작 과정** ###
 1. **새로 생성된 객체는 Eden 영역에 할당된다.**                       
 ![HEAP 메모리 구조](/assets/img/eden.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " }    
-
 2. **Eden 영역이 꽉차면, Minor GC 실행**     
 ![gc 작동과정 1](/assets/img/minor-gc1.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " }          
 - GC는 **Marking - Deleting - Copying** 순으로 작동한다.     
@@ -43,7 +42,6 @@ pin: true
     
 - 활성화된 객체는 **Survival 영역으로 이동**하나, 두개의 영역 중 **먼저 채워진 곳이 있다면 해당 위치로 이동하게된다.**                   
 ➔ **즉, Survival 0,1 영역 중 한곳은 비어있어야 한다.**    
-
 3. **1~2 과정을 반복하다, Survival 영역이 꽉차면 마찬가지로 Minor GC 실행**    
 ➔ *****Survival 영역에서 Survival 영역***으로 이동할 땐 Age가 증가한다.**
 ![gc 작동과정 2](/assets/img/minor-gc2.jpg){:style="border:0.2px solid ;border-radius: 6px; padding: 0px; " }      
@@ -65,23 +63,20 @@ stop-the-world가 발생하면 **GC를 실행하는 스레드를 제외한 나�
 ---
 1. **Serial GC**
 - GC를 처리하는 **스레드가 하나**이다. 
-- **적은 메모리와 CPU코어가 한개** 일 때 사용
+- **적은 메모리와 CPU코어가 한개** 일 때 사용           
 ![Serial GC](/assets/img/serial-gc.png){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; height:300px;" }    
-
 2. **Parallel GC**
 - Young 영역의 GC를 처리하는 **스레드가 여러개**이다. 
 - **메모리가 충분하고 코어의 개수가 많을 때** 사용
 - Serial GC에 비해 상대적으로 **Stop The World**가 짧다.
 ![Parallel GC](/assets/img/parallel-gc.png)
-
 3. **CMS GC(Concurrent Mark Sweep)**
 - **stop-the-world 시간을 줄이기 위해 고안됨**
 - **Reachable**한 객체를 한번에 찾지 않고, **나눠서 찾는다.**
 - **compact 과정이 없다.**     
 **🤔compact ??**   
 ➔ **UnReachable한** 상태의 객체를 지운 후 생긴 빈 공간들(=메모리 단편화)을 제거하고자, **Reachable한 객체들을 한 곳으로 모으는 작업**
-![CMS GC](/assets/img/cms-gc.png)
-         
+![CMS GC](/assets/img/cms-gc.png)         
 4. **G1 GC**
 - CMS GC를 개선
 - **Java 9++에서의 Default GC**
