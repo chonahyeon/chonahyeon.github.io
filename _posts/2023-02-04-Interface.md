@@ -1,6 +1,6 @@
 ---
 title: "[Java] 클래스, 인터페이스, 상속에 대해"
-date: '2022-12-28 +0900'
+date: '2023-02-05 +0900'
 description: '기술면접 정리하기 - 클래스,인터페이스,상속'
 categories: [Study,Java]
 tags: [Java,기술면접]

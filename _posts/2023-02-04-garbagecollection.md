@@ -1,6 +1,6 @@
 ---
 title: "[Java] 가비지 컬렉션 정의 및 동작원리"
-date: '2022-12-28 +0900'
+date: '2023-02-05 +0900'
 description: '기술면접 정리하기 - 가비지 컬렉션'
 categories: [Study,Java]
 tags: [Java,기술면접]
