@@ -25,19 +25,20 @@ pin: true
     * **참조형 타입**(Reference type)의 데이터가 저장된다.
     * **Heap 영역의 구조?**
     <br>                 
-    ![HEAP 메모리 구조](/assets/img/HEAP.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " } 
+    ![HEAP 메모리 구조](/assets/img/HEAP.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; height: 270px; " } 
 
 ### **가비지 컬렉션의 동작 과정** ###
 1. **새로 생성된 객체는 Eden 영역에 할당된다.**                       
-![HEAP 메모리 구조](/assets/img/eden.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " }    
+![HEAP 메모리 구조](/assets/img/eden.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; height: 250px; " }    
 2. **Eden 영역이 꽉차면, Minor GC 실행**     
-![gc 작동과정 1](/assets/img/minor-gc1.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; " }          
+![gc 작동과정 1](/assets/img/minor-gc1.jpg){:style="border:0.2px solid ; border-radius: 6px; padding: 0px; heigth: 240px; " }          
 - GC는 **Marking - Deleting - Copying** 순으로 작동한다.     
 - **Marking?**      
-    **Garbage Collection Root(Stack 영역의 데이터)** 로부터, 해당 Root가 참조하는 객체들과, 또 그 객체들이 참조하는 객체를 탐색하면서 **Reachable 상태의 객체는 마킹하고, UnReachable 상태의 객체는 마킹하지 않는다.**        
+    **Garbage Collection Root(Stack 영역의 데이터)** 로부터 해당 Root가 참조하는 객체들과 또 그 객체들이 참조하는 객체를 탐색하면서 **Reachable 상태의 객체는 마킹하고, UnReachable 상태의 객체는 마킹하지 않는다.**        
 - **Deleting?**      
     **Unreachable한 상태의 객체(= 마킹되지 않은 객체)들의 메모리를 해제**한다.         
-- 활성화된 객체는 **Survival 영역으로 이동**하나, 두개의 영역 중 **먼저 채워진 곳이 있다면**     
+- **Copying?**     
+활성화된 객체는 **Survival 영역으로 이동**하나, 두개의 영역 중 **먼저 채워진 곳이 있다면**     
 **해당 위치로 이동하게된다.**                      
 ➔ **즉, Survival 0,1 영역 중 한곳은 비어있어야 한다.**    
 3. **1~2 과정을 반복하다, Survival 영역이 꽉차면 마찬가지로 Minor GC 실행**    
