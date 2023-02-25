@@ -4,7 +4,6 @@ date: '2023-02-24 +0900'
 description: '스프링 정리 - 디스패처서블릿'
 categories: [Study,Spring]
 tags: [Study,Spring]
-pin: true
 ---
 
 > 2월 4주차 스터디 발표 자료📖                  

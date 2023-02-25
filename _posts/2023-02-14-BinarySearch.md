@@ -4,7 +4,6 @@ date: '2023-02-14 +0900'
 description: '알고리즘 정리 - Binary Search'
 categories: [Study,코딩테스트]
 tags: [알고리즘,이분탐색]
-pin: true
 ---
 
 > 2월 3주차 스터디 발표 자료📖                                    

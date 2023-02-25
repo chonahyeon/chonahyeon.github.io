@@ -4,7 +4,6 @@ date: '2023-02-05 +0900'
 description: '기술면접 정리하기 - @Component @Autowired'
 categories: [Study,Spring]
 tags: [Spring,기술면접]
-pin: true
 ---
 
 > 2월 2주차 스터디 발표 자료📖                                    

@@ -4,7 +4,6 @@ date: '2023-02-02 +0900'
 description: '기술면접 준비 - HTTP 상태코드'
 categories: [Study,Network]
 tags: [Network,기술면접]
-pin: true
 ---
 
 > 2월 1주차 스터디 발표 자료📖                                    

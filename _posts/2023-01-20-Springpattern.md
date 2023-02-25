@@ -4,7 +4,6 @@ date: '2023-01-20 +0900'
 description: 'Spring Builder 패턴 정리'
 categories: [Study,Spring]
 tags: [Java,Spring]
-pin: true
 ---
 
 > 1월 3주차 스터디 발표 자료📖                                    
