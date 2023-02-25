@@ -634,7 +634,7 @@ $sidebar-display: "sidebar-display";
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  background: url('바다.jpg');
+  background: url('/assets/img/고양이배경.jpg');
   background-size: 100% 100%;
   background-position: center;
 
@@ -736,7 +736,7 @@ $sidebar-display: "sidebar-display";
       
       .nav-link {
         /*(Origin) color: var(--sidebar-active-color); ( 클릭한 카테고리에 해당되는 색 )*/
-        color:rgba(46, 76, 109, 100%)
+        color:#89c4e1;
       }
     }
 
