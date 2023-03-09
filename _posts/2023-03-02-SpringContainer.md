@@ -4,7 +4,6 @@ date: '2023-03-02 +0900'
 description: '기술면접 정리하기 - 스프링 컨테이너'
 categories: [Study,Spring]
 tags: [Spring,기술면접]
-pin: true
 ---
 
 > 3월 1주차 스터디 발표 자료📖                                               
