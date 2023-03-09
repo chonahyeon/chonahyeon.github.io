@@ -27,7 +27,7 @@ public class HelloThread extends Thread {
         log.info("Thread 실행");
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Thread thread = new Thread(new HelloThread());
         thread.start();
     }
@@ -46,7 +46,7 @@ public class HelloRunnable implements Runnable{
         log.info("Thread 실행");
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         (new Thread(new HelloRunnable())).start();
     }
 }
@@ -113,7 +113,7 @@ public class HelloRunnable implements Runnable{
         log.info("Thread 종료: {} 번째", this.seq);
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args){
 
         for (int i = 0; i < 10; i++) {
             Thread t = new Thread(new HelloRunnable(i)); // extends Thread 방식과 차이점
