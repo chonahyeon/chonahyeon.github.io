@@ -134,10 +134,10 @@ public class HelloRunnable implements Runnable{
 - 밑의 코드는 **main 메서드가 모든 쓰레드가 종료된 후 종료되도록 한다.**
 ```java
 @Slf4j
-public class HelloThread extends Thread {
+public class HelloRunnable implements Runnable {
     int seq;
 
-    public HelloThread(int seq) {
+    public HelloRunnable(int seq) {
         this.seq = seq;
     }
 
@@ -151,16 +151,23 @@ public class HelloThread extends Thread {
         log.info("Thread 종료: {} 번째", this.seq);
     }
 
-    public static void main(String[] args) {
-        ArrayList<Thread> threads = new ArrayList<>();
+    public static void main(String args[]) {
+
+        List<Thread> threadList = new ArrayList<>();
+
         for (int i = 0; i < 10; i++) {
-            Thread t = new HelloThread(i);
+            Thread t = new Thread(new HelloRunnable(i));
             t.start();
-            threads.add(t);
+            threadList.add(t);
         }
 
-        // 5번 쓰레드가 종료될 때까지 기다린다.
-        Thread 
+        for (Thread t : threadList) {
+            try {
+                t.join();
+            } catch (Exception e) {
+            }
+        }
+
         log.info("main 메서드 종료합니다..");
     }
 }
