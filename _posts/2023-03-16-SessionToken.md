@@ -93,3 +93,25 @@ tags: [Network,Security]
 - ***Payload 자체는 암호화되지 않기 때문에 클라이언트의 중요한 정보를 담을 수 없다.***
 - **토큰은 한번 발급되면 유효기간이 만료될 때까지 사용이 가능하기 때문에 탈취당하면 대처하기 어렵다.**
     - ***세션처럼 서버에 저장되는게 아니기 때문에 탈취당한 토큰을 제거할 수 없음***
+
+### **Refresh Token**
+- ***토큰은 한번 탈취되면 유효기간동안 대처할 수 있는 방법이 없기 때문에 Refresh Token이라는 개념이 등장했다.***
+- Refresh Token은 **보안을 위해 Access Token의 유효기간을 짧고, 자주 재발급하도록 하는 대신 사용자에겐 편의성을 제공하기 위한 토큰**
+    - 여기서 말한 사용자의 편의성은 **인증과정이다. Access Token만 있다면 유효기간이 지날 때마다 계속 로그인을 해야하는 불편함이 생길 것이다.**
+- ***Access Token이 발급될 때 Refresh Token도 동시에 발급되며 Access Token에 비해 긴 유효기간을 가진다.***
+- **Access Token은 권한에 관여하는 토큰이라면 Refresh Token은 재발급에 관여하는 토큰이다.**
+
+### **Refresh Token을 사용한 재발급 과정**
+> **Refresh Token 사진 출처 :** <https://nowgnas.github.io/posts/refreshtoken/>{:target="_blank"}  
+
+![JWT 인증과정](/assets/img/refresh-token.png){:style="border:0.2px solid ; border-radius: 6px; padding: 0px;" }
+1. 클라이언트가 **로그인 요청을하면 서버는 회원 DB를 통해 유효한 사용자인지 확인한다.**
+2. 인증정보에 해당하는 회원이 존재하면 **Access Token과 Refresh Token을 발급한다.**
+3. **발급받은 사용자의 id와 Refresh Token을 DB 테이블에 저장해 둔다.**
+4. 클라이언트에게 **Access Token과 Refresh Token을 전달한다.**
+5. 클라이언트가 서버에 리소스 요청시, **Access Token을 확인한 후 유효한 토큰이면 요청한 데이터를 응답한다.**
+6. 만약 **요청에 포함된 Access Token이 만료되었다면, Access Token이 만료되었음을 클라이언트에게 전달한다.**
+7. **클라이언트는 Access Token의 만료를 확인한 후 서버에 Access Token의 Refresh를 요청한다.**
+8. 서버는 **만료된 Access Token에서 사용자의 id 값을 얻은 후 DB에 저장되어있는 Refresh Token이 유효한지 확인한다.**
+9. Refresh Token이 유효하다면 **Access Token을 재발급하여 Client에 전송한다.**
+10. **만약 Refresh Token의 유효기간이 만료되었다면 재로그인을 요청한다.** 
