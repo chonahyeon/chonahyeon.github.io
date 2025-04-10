@@ -50,7 +50,7 @@ jobs:
         continue-on-error: true # optional: prevents build failure on broken links
 
       - name: Upload GitHub Pages Artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
 
@@ -64,4 +64,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
